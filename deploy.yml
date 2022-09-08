@@ -1,0 +1,14 @@
+- job: deployiFlow
+    dependsOn: downloadPiper
+    variables:
+    - group: development
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Cache@2
+      inputs:
+        key: piper-go-official
+        path: bin 
+      displayName: deploy iflow
+    - script: |
+          bin/piper integrationArtifactDeploy --verbose --apiServiceKey $(CREDENTIALS) --integrationFlowId "TestCICD"
