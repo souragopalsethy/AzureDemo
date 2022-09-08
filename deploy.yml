@@ -11,4 +11,4 @@
         path: bin 
       displayName: deploy iflow
     - script: |
-          bin/piper integrationArtifactDeploy --verbose --apiServiceKey $(CREDENTIALS) --integrationFlowId "TestCICD"
+          bin/piper integrationArtifactDeploy --verbose --apiServiceKey $(CREDENTIALS) --integrationFlowId "get_GdriveFile"
